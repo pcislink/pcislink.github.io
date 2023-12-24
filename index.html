@@ -67,9 +67,9 @@
             document.getElementById("permitNumbers").focus();
         });
 
- 	// Submit the form when Shift-Enter key is pressed inside the textarea
+	// Submit the form when Ctrl-Enter key is pressed inside the textarea
         document.getElementById("permitNumbers").addEventListener("keydown", function(event) {
-            if (event.key === "Enter" && event.shiftKey) {
+            if (event.key === "Enter" && event.ctrlKey) {
                 document.getElementById("permitForm").submit(); // Submit the form
             }
         });
