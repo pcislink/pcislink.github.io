@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Permit Number Lookup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #permitForm {
+            max-width: 500px; /* Adjust the max-width as needed */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 90%;
+            height: 150px; /* Adjust the height as needed */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Permit Number Lookup</h1>
+    <form id="permitForm">
+        <label for="permitNumbers">Enter Permit Numbers (separated by commas, colons, semicolons, or new lines):</label>
+        <textarea id="permitNumbers" name="permitNumbers" placeholder="e.g., 23042-10000-20760, 21010-30000-04578: 210413000052487; 21041 - 30000 - 52487"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("permitForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get the permit numbers from the textarea and split them into an array
+            var permitNumbersInput = document.getElementById("permitNumbers");
+            var permitNumbersText = permitNumbersInput.value;
+            var permitNumbersArray = permitNumbersText.split(/,|:|;|\n/);
+
+            // Loop through the permit numbers and open a new tab for each one
+            permitNumbersArray.forEach(function(permitNumber) {
+                // Remove leading and trailing spaces if any
+                permitNumber = permitNumber.trim();
+
+                // Remove spaces and hyphens to get a clean permit number
+                permitNumber = permitNumber.replace(/[-\s]/g, '');
+
+                // Check if the cleaned permit number is a 15-digit number
+                if (/^\d{15}$/.test(permitNumber)) {
+                    // Split the permit number into three parts
+                    var id1 = permitNumber.slice(0, 5);
+                    var id2 = permitNumber.slice(5, 10);
+                    var id3 = permitNumber.slice(10);
+
+                    // Construct the URL
+                    var url = "https://www.ladbsservices2.lacity.org/OnlineServices/PermitReport/PcisPermitDetail?id1=" + id1 + "&id2=" + id2 + "&id3=" + id3;
+
+                    // Open the URL in a new tab or window
+                    window.open(url, "_blank");
+                }
+            });
+
+            // Clear the textarea after submitting
+            permitNumbersInput.value = '';
+        });
+    </script>
+</body>
+</html>
