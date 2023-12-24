@@ -62,6 +62,10 @@
     </form>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set focus on the text area when the page loads
+            document.getElementById("permitNumbers").focus();
+        });
         document.getElementById("permitForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the form from submitting the traditional way
 
