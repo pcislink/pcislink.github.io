@@ -12,7 +12,7 @@
 			font-size: 14px;
         }
         form, #permitForm {
-            max-width: 500px;
+            max-width: 550px;
             margin: 10px auto;
             padding: 10px;
             background-color: #fff;
@@ -41,7 +41,6 @@
             background-color: #0056b3;
         }
         .links-section {
-            text-align: center;
             max-width: 760px;
             margin-left: auto;
 			margin-right: auto;
@@ -51,7 +50,7 @@
         }
 		.link-group {
 			margin-bottom: 30px;
-			text-align: center;
+			text-align: left;
 		}
 		.bold-link {
 			font-weight: bold;
@@ -79,11 +78,7 @@
     </style>
 </head>
 <body>
-    <!-- Google Search Bar -->
-    <form action="https://www.google.com/search" method="get" target="_blank">
-        <input type="text" name="q" placeholder="Search Google">
-        <input type="submit" value="Search Google">
-    </form>
+    
 
     <!-- Permit Number Lookup Form (As provided in index.html) -->
     <div id="permitForm">
@@ -117,7 +112,8 @@
 						<p><a href="https://streetsla.lacity.org/">Street Services</a></p>
 					</div>
 					<div class="link-group">
-						<p><a href="https://lid.lacitysan.org/" class="bold-link">LID Portal</a></p>
+						<p class="bold-link">LID</p>
+						<p><a href="https://lid.lacitysan.org/">Plan Check Portal</a></p>
 						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=62&officeId=27">Queue – Plan Review</a></p>
 						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=185&officeId=27">Queue – Restamp</a></p>
 						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=61&officeId=27">Queue – CofO</a></p>
@@ -179,7 +175,11 @@
             </tr>
         </table>
     </div>
-
+<!-- Google Search Bar -->
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search Google">
+        <input type="submit" value="Search Google">
+    </form>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Set focus on the text area when the page loads
