@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Erik's PCCLA Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+			line-height: 0.5;
+			font-size: 14px;
+        }
+        form, #permitForm {
+            max-width: 500px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			line-height: 1.0;
+        }
+        input[type="text"], textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .links-section {
+            text-align: center;
+            max-width: 760px;
+            margin-left: auto;
+			margin-right: auto;
+        }
+        .links-section h2 {
+            text-align: center;
+        }
+		.link-group {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		.bold-link {
+			font-weight: bold;
+		}
+		ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+		a {
+            color: #007bff;
+        }
+        table {
+            width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+        }
+        td {
+            vertical-align: top;
+            padding: 10px;
+        }
+		
+    </style>
+</head>
+<body>
+    <!-- Google Search Bar -->
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search Google">
+        <input type="submit" value="Search Google">
+    </form>
+
+    <!-- Permit Number Lookup Form (As provided in index.html) -->
+    <div id="permitForm">
+        <h3>Permit Number Lookup</h3>
+        <form>
+            <label for="permitNumbers">Enter Permit Numbers (separated by commas, colons, semicolons, or new lines):</label>
+            <textarea id="permitNumbers" name="permitNumbers" placeholder="e.g., 23042-10000-20760, 21010-30000-04578: 210413000052487; 21041 - 30000 - 52487"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Links Section -->
+    <div class="links-section">
+        <h2>PCCLA Links – City of LA</h2>
+        <table>
+            <tr>
+                <td>
+                    <!-- Column 1 -->
+					<div class="link-group">
+						<p><a href="https://appointments.lacity.org/apptsys/Public/Account" class="bold-link">BuildLA Appointments</a></p>
+					</div>					
+                    <div class="link-group">
+						<p><a href="https://ladbs.org/" class="bold-link">LADBS Website</a></p>
+						<p><a href="https://www.ladbsservices2.lacity.org/OnlineServices/?service=plr">Permit Status</a></p>
+						<p><a href="https://08web15.lacity.org:943/Edit_CED/start.aspx">Permit Fee Calculator</a></p>
+						<p><a href="https://ladbs.org/applyforapermitonline">Express Permit Website</a></p>
+					</div>	
+					<div class="link-group">
+						<p><a href="https://engineering.lacity.gov/" class="bold-link">Bureau of Engineering</a></p>
+						<p><a href="https://engpermits.lacity.org/public/control.cfm?action=login">CSR Portal</a></p>
+						<p><a href="https://streetsla.lacity.org/">Street Services</a></p>
+					</div>
+					<div class="link-group">
+						<p><a href="https://lid.lacitysan.org/" class="bold-link">LID Portal</a></p>
+						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=62&officeId=27">Queue – Plan Review</a></p>
+						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=185&officeId=27">Queue – Restamp</a></p>
+						<p><a href="https://appointments.lacity.org/apptsys/Public/VirtualCounter/VirtualQueueStep2?agencyId=2&serviceId=61&officeId=27">Queue – CofO</a></p>
+						<p><a href="https://lacitysan.org/LID">Forms & Docs</a></p>
+					</div>
+                </td>
+                <td>
+                    <!-- Column 2 -->
+                    <div class="link-group">
+						<p class="bold-link">GIS Research</p>
+						<p><a href="https://zimas.lacity.org/">ZIMAS</a></p>
+						<p><a href="https://navigatela.lacity.org/navigatela/">NavigateLA</a></p>
+						<p><a href="https://lacitydbs.org/buildinginfo">Building Info Online</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Records</p>
+						<p><a href="https://ladbsdoc.lacity.org/">LADBS Building Records</a></p>
+						<p><a href="https://portal.assessor.lacounty.gov/">Assessor Parcel Lookup</a></p>
+						<p><a href="https://dpw.lacounty.gov/smpm/landrecords/tractmaps.aspx">Tract Maps</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Code Library</p>
+						<p><a href="https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-108121">LA City Municipal Code</a></p>
+						<p><a href="https://up.codes/viewer/los_angeles/ca-building-code-2022">Building Code</a></p>
+						<p><a href="https://up.codes/viewer/los_angeles/ca-residential-code-2022">Residential Code</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Other</p>
+						<p><a href="https://axiexchange.edgepilot.com/Services/SpamLabArea.aspx#!/quarantine/spam">Axicomm Spam Quarantine</a></p>
+					</div>
+                </td>
+                <td>
+                    <!-- Column 3 -->
+					<div class="link-group">
+						<p><a href="https://planning.lacity.gov/" class="bold-link">City Planning</a></p>
+						<p><a href="https://plncts.lacity.org/oas">OAS Portal</a></p>
+						<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSex4S4gi4aquy8yEbTXqjqvRX59p4UF3Btw6tewKRhHTeaCFA/viewform">Google Form</a></p>
+						<p><a href="https://planning.lacity.gov/pdiscaseinfo/caseNumber">Case Lookup</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Other Agencies</p>
+						<p><a href="https://inspect.lafd.org/">LA City Fire Department</a></p>
+						<p><a href="https://ladot.lacity.gov/businesses/development-review">LADOT Development Review</a></p>
+						<p><a href="https://wmis.powersystem.ladwp.com/">LADWP – Electrical Service</a></p>
+						<p><a href="https://mywaterservice.waterapps.ladwp.com/">LADWP – Water Service</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Contractor Info</p>
+						<p><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx">CSLB License Check</a></p>
+						<p><a href="https://search.dca.ca.gov/?BD=31">Engineer License Check</a></p>
+						<p><a href="https://data.lacity.org/stories/s/Easy-BTRC-Lookup-Tool/8g3t-qf9k">Business Tax License Search</a></p>
+					</div>
+					<div class="link-group">
+						<p class="bold-link">Printing</p>
+						<p><a href="https://www.e-arc.com/location/los-angeles-sepulveda-blvd/">ARC West LA</a></p>
+						<p><a href="https://www.e-arc.com/location/los-angeles-venice-boulevard/">ARC Downtown</a></p>
+					</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set focus on the text area when the page loads
+            document.getElementById("permitNumbers").focus();
+        });
+
+        document.getElementById("permitForm").addEventListener("submit", function(event) {
+            // Get the permit numbers from the textarea and split them into an array
+            var permitNumbersInput = document.getElementById("permitNumbers");
+            var permitNumbersText = permitNumbersInput.value;
+            var permitNumbersArray = permitNumbersText.split(/,|:|;|\n/);
+
+            // Loop through the permit numbers and open a new tab for each one
+            permitNumbersArray.forEach(function(permitNumber) {
+                // Remove leading and trailing spaces if any
+                permitNumber = permitNumber.trim();
+
+                // Remove spaces and hyphens to get a clean permit number
+                permitNumber = permitNumber.replace(/[-\s]/g, '');
+
+                // Check if the cleaned permit number is a 15-digit number
+                if (/^\d{15}$/.test(permitNumber)) {
+                    // Split the permit number into three parts
+                    var id1 = permitNumber.slice(0, 5);
+                    var id2 = permitNumber.slice(5, 10);
+                    var id3 = permitNumber.slice(10);
+
+                    // Construct the URL
+                    var url = "https://www.ladbsservices2.lacity.org/OnlineServices/PermitReport/PcisPermitDetail?id1=" + id1 + "&id2=" + id2 + "&id3=" + id3;
+
+                    // Open the URL in a new tab or window
+                    window.open(url, "_blank");
+                }
+            });
+
+            // Clear the textarea after submitting
+            permitNumbersInput.value = '';
+        });
+    </script>
+</body>
+</html>
