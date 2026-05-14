@@ -56,14 +56,50 @@
         .links-section h2 {
             text-align: center;
         }
-		.link-group {
-			margin-bottom: 30px;
-			text-align: left;
-		}
-		.bold-link {
-			font-weight: bold;
-		}
-		ul {
+        .link-group {
+            margin-bottom: 30px;
+            text-align: left;
+            padding: 14px 16px;
+            border-radius: 12px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .link-group:nth-of-type(6n+1) {
+            background-color: #f9f4ea;
+        }
+        .link-group:nth-of-type(6n+2) {
+            background-color: #e8f4fb;
+        }
+        .link-group:nth-of-type(6n+3) {
+            background-color: #eaf7e8;
+        }
+        .link-group:nth-of-type(6n+4) {
+            background-color: #f7e8f2;
+        }
+        .link-group:nth-of-type(6n+5) {
+            background-color: #f4f1fd;
+        }
+        .link-group:nth-of-type(6n+6) {
+            background-color: #f3f3f3;
+        }
+        .link-group:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        }
+        .link-group p {
+            margin: 8px 0;
+        }
+        .bold-link {
+            display: block;
+            font-weight: 700;
+            font-size: 1.08em;
+            color: #000;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .link-group a.bold-link:hover {
+            text-decoration: underline;
+        }
+        ul {
             list-style-type: none;
             padding: 0;
         }
@@ -95,7 +131,7 @@
             <label for="permitNumbers">Enter Permit Numbers (separated by commas, colons, semicolons, or new lines):</label>
             <textarea id="permitNumbers" name="permitNumbers" placeholder="e.g., 23042-10000-20760, 21010-30000-04578: 210413000052487; 21041 - 30000 - 52487"></textarea>
             <div class="form-actions">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Permit Status">
                 <input type="button" id="clearancesBtn" value="Clearances">
             </div>
         </form>
