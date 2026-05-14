@@ -27,17 +27,25 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        input[type="submit"] {
-            display: block;
-            width: 100%;
-            padding: 10px;
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        input[type="submit"], input[type="button"] {
+            display: inline-block;
+            min-width: 140px;
+            padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-align: center;
         }
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, input[type="button"]:hover {
             background-color: #0056b3;
         }
         .links-section {
@@ -83,11 +91,13 @@
     <!-- Permit Number Lookup Form (As provided in index.html) -->
     <div id="permitForm">
         <h3>Permit Number Lookup</h3>
-        <form>
+        <form id="permitLookupForm">
             <label for="permitNumbers">Enter Permit Numbers (separated by commas, colons, semicolons, or new lines):</label>
             <textarea id="permitNumbers" name="permitNumbers" placeholder="e.g., 23042-10000-20760, 21010-30000-04578: 210413000052487; 21041 - 30000 - 52487"></textarea>
-            <input type="submit" value="Submit">
-            <input type="button" id="clearancesBtn" value="Clearances">
+            <div class="form-actions">
+                <input type="submit" value="Submit">
+                <input type="button" id="clearancesBtn" value="Clearances">
+            </div>
         </form>
     </div>
 
@@ -192,10 +202,25 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Set focus on the text area when the page loads
-            document.getElementById("permitNumbers").focus();
+            var permitNumbersInput = document.getElementById("permitNumbers");
+            permitNumbersInput.focus();
+
+            // Submit the form when Enter is pressed in the textarea (without Shift/Ctrl/Alt)
+            permitNumbersInput.addEventListener("keydown", function(event) {
+                if (event.key === "Enter" && !event.shiftKey && !event.ctrlKey && !event.altKey) {
+                    event.preventDefault();
+                    var permitLookupForm = document.getElementById("permitLookupForm");
+                    if (permitLookupForm.requestSubmit) {
+                        permitLookupForm.requestSubmit();
+                    } else {
+                        permitLookupForm.submit();
+                    }
+                }
+            });
         });
 
-        document.getElementById("permitForm").addEventListener("submit", function(event) {
+        document.getElementById("permitLookupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
             // Get the permit numbers from the textarea and split them into an array
             var permitNumbersInput = document.getElementById("permitNumbers");
             var permitNumbersText = permitNumbersInput.value;
