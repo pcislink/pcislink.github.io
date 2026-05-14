@@ -87,6 +87,7 @@
             <label for="permitNumbers">Enter Permit Numbers (separated by commas, colons, semicolons, or new lines):</label>
             <textarea id="permitNumbers" name="permitNumbers" placeholder="e.g., 23042-10000-20760, 21010-30000-04578: 210413000052487; 21041 - 30000 - 52487"></textarea>
             <input type="submit" value="Submit">
+            <input type="button" id="clearancesBtn" value="Clearances">
         </form>
     </div>
 
@@ -217,6 +218,36 @@
 
                     // Construct the URL
                     var url = "https://www.ladbsservices2.lacity.org/OnlineServices/PermitReport/PcisPermitDetail?id1=" + id1 + "&id2=" + id2 + "&id3=" + id3;
+
+                    // Open the URL in a new tab or window
+                    window.open(url, "_blank");
+                }
+            });
+
+            // Clear the textarea after submitting
+            permitNumbersInput.value = '';
+        });
+
+        // Clearances button handler
+        document.getElementById("clearancesBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Get the permit numbers from the textarea and split them into an array
+            var permitNumbersInput = document.getElementById("permitNumbers");
+            var permitNumbersText = permitNumbersInput.value;
+            var permitNumbersArray = permitNumbersText.split(/,|:|;|\n/);
+
+            // Loop through the permit numbers and open a new tab for each one
+            permitNumbersArray.forEach(function(permitNumber) {
+                // Remove leading and trailing spaces if any
+                permitNumber = permitNumber.trim();
+
+                // Remove spaces and hyphens to get a clean permit number
+                permitNumber = permitNumber.replace(/[-\s]/g, '');
+
+                // Check if the cleaned permit number is a 15-digit number
+                if (/^\d{15}$/.test(permitNumber)) {
+                    // Construct the clearance URL
+                    var url = "https://ladbsservices3.lacity.org/ePlan_api/api/BuildLA/LADBS/Permit/Clearance/Document?PermitNumber=" + permitNumber;
 
                     // Open the URL in a new tab or window
                     window.open(url, "_blank");
